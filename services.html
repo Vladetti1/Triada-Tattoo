@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Услуги</title>
+    <style>
+
+.spot {
+    position: absolute;
+    z-index: -15; 
+}
+
+#spot1 {
+    top: -680px; 
+    left: 750px;
+transform: scale(0.4);
+}
+
+#spot2 {
+    top: -650px; 
+    left: 100px;
+transform: scale(0.6);
+}
+
+#spot3 {
+    top: -610px; 
+    left: 140px;
+transform: scale(0.6);
+}
+
+
+
+#spot4 {
+    top: -300px; 
+    left: 150px;
+transform: scale(0.3);
+}
+
+
+
+
+
+
+#spot5 {
+    top: -450px; 
+    left: 10px;
+transform: scale(0.4);
+}
+
+
+
+
+
+
+
+
+.cons_img1 {
+    position: absolute;
+    top: -10%;
+    right: 0vw;
+    width: 60%;
+    z-index: -100;
+}
+
+.cons_img1 img {
+    width: 117%;
+    height: auto; 
+}
+
+
+
+.cons_img2 {
+    position: absolute;
+    top: 10%; 
+    right: 28vw;
+    width: 50%; 
+    z-index: -1;
+}
+
+.cons_img2 img {
+    width: 100%;
+    height: auto;
+}
+
+
+
+.cons_img3 {
+    position: absolute;
+    top: 40%;
+    right: 32vw;
+    width: 35%;
+    height: auto;
+    z-index: -1;
+}
+
+.cons_img3 img {
+    width: 100%;
+    height: auto;
+    transform: scale(1.5);
+    transform-origin: center;
+
+}
+
+
+
+.cons_img4 {
+    position: absolute;
+    top: 6%;
+    right: 27vw;
+    width: 50%;
+    z-index: -4;
+}
+
+.cons_img4 img {
+    width: 100%; 
+    height: auto; 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@font-face {
+            font-family: 'ExyleC';
+            src: url('exylec.otf') format('truetype');
+        }
+
+        @font-face {
+            font-family: 'Copperplate';
+            src: url('copperplate.otf') format('truetype');
+        }
+
+
+@font-face {
+            font-family: 'Virginia';
+            src: url('Virginia.ttf') format('truetype');
+        }
+
+
+.large-text {
+    font-family: 'Virginia';
+    font-size: 4vw;
+    color: #00FFCC; 
+position: absolute;
+   
+    top: 290%; 
+    right: -4vw; 
+    transform: rotate(90deg); 
+  
+    z-index: 5; 
+    transform: translateY(-50%) rotate(90deg); 
+
+
+}
+
+
+.button{
+  border: 2px solid #00FFCC;}
+
+
+ .glow-on-hover {
+            display: inline-block;
+            padding: 10px 20px;
+            color: #00FFCC;
+            background: #111;
+            border-radius: 10px;
+            position: relative;
+            z-index: 0;
+            text-decoration: none;
+            font-size: 18px;
+            cursor: pointer;
+            transition: color 0.3s;
+  border: 2px solid #00FFCC;
+        }
+        .glow-on-hover:before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            width: calc(100% + 4px);
+            height: calc(100% + 4px);
+            background: linear-gradient(45deg, #00ffff, #00ffd5, #00bfff, #007fff, #00bfff, #00ffd5, #00ffff);
+            filter: blur(5px);
+            z-index: -1;
+            border-radius: 10px;
+            animation: glowing 20s linear infinite;
+            opacity: 0;
+            transition: opacity .3s ease-in-out;
+        }
+        .glow-on-hover:hover:before {
+            opacity: 1;
+        }
+        .glow-on-hover:active {
+            color: #000;
+        }
+        .glow-on-hover:active:after {
+            background: transparent;
+        }
+        .glow-on-hover:after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: #111;
+            top: 0;
+            left: 0;
+            border-radius: 10px;
+            z-index: -1;
+        }
+        @keyframes glowing {
+            0% { background-position: 0 0; }
+            50% { background-position: 400% 0; }
+            100% { background-position: 0 0; }
+        }
+        .footer {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 40px;
+            background-color: #1a1a1a;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            padding-right: 20px;
+            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 10;
+            color: #fff;
+        }
+       
+        @media (max-width: 768px) {
+            .menu {
+                flex-direction: column;
+                align-items: center;
+                top: 60%;
+                transform: translateY(-50%);
+            }
+            .menu a {
+                margin: 10px 0;
+                font-size: 20px;
+            }
+            .header {
+                height: 50px;
+                padding-left: 10px;
+            }
+            .header img {
+                height: 30px;
+            }
+            .footer {
+                height: 30px;
+                padding-right: 10px;
+                font-size: 14px;
+            }
+        }
+        @media (max-width: 480px) {
+            .menu a {
+                font-size: 18px;
+            }
+            .footer {
+                height: 25px;
+                padding-right: 5px;
+                font-size: 12px;
+            }
+            .header {
+                height: 40px;
+                padding-left: 5px;
+            }
+            .header img {
+                height: 25px;
+            }
+        }
+
+
+.contacts {
+            display: flex;
+            align-items: center;
+            position: relative;
+            left: -30px; 
+      transform: translateX(-25vw);
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+            margin-left: 1500px;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #000; 
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            margin-top: 10px;
+        }
+
+        .dropdown-content a {
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+
+        .contacts .adress a,
+        .contacts .zap a {
+            color: #000000;
+            text-decoration: none;
+            margin-left: 20px;
+        }
+
+
+        body {
+            font-family: 'Copperplate';
+            background: black;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+ display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column; /* Это выровняет элементы сверху вниз */
+
+
+        }
+        .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            height: 50px;
+            background-color: #808080;
+            display: flex;
+            align-items: center;
+            padding-left: 0px;
+            padding-right: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 10;
+            color: #000;
+ font-family: 'ExyleC';
+ font-size: 25px;
+        }
+
+        .header img {
+            height: 40px;
+            margin-left: 10px;
+        }
+
+        .header .contact1 {
+            margin-left: auto;
+        }
+
+        .header .contact1 a {
+            color: #000000;
+            text-decoration: none;
+            margin-bottom: 3px;
+        }
+
+        .header .contact1 a.tel {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .header .contact1 a:not(.tel) {
+            display: inline-block;
+            margin-right: 10px;
+        }
+
+        .header .adress a,
+        .header .zap a {
+            color: #000000;
+            text-decoration: none;
+            margin-left: 10px;
+        }
+
+        .header .adress {
+            margin-left: 5px;
+           
+        }
+
+        .header .zap {
+            margin-left: 5px;
+            transform: translateX(-5px);
+        }
+
+        .small-logo {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            width: 50px;
+            height: auto;
+        }
+     
+        h2 {
+            margin: 20px 0;
+        }
+        .gallery-container {
+            position: relative;
+           width: 40%; /* Занять всю доступную ширину */
+    height: auto; /* Автоматическая высота */
+            overflow: hidden;
+ margin-bottom: 50px;
+
+
+           
+          
+        }
+        .gallery {
+            display: flex;
+            transition: transform 0.5s ease;
+            margin-left: -50px;
+      
+ 
+        }
+        .gallery-image {
+            min-width: calc(100% / 3);
+            transition: transform 0.5s ease;
+   z-index: 10;
+            cursor: pointer;
+        }
+        .gallery-image:not(:nth-child(2)) {
+            opacity: 0.5;
+ z-index: -10;
+        }
+        .gallery-image:nth-child(2) {
+            transform: scale(1.2);
+ z-index: 10;
+        }
+
+        .arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 150px;
+            height: 150px;
+            cursor: pointer;
+
+        }
+        .left-arrow {
+            left: 60px;
+
+        }
+        .right-arrow {
+            right: 100px;
+ transform: rotate(180deg);
+top: 35%;
+
+        }
+
+ .right-arrow1 {
+            right: 100px;
+ transform: rotate(180deg);
+top: 44px;
+
+        }
+
+ .right-arrow2 {
+            right: 100px;
+ transform: rotate(180deg);
+top: 86px;
+ 
+        }
+
+        /* Модальное окно */
+        .modal {
+            display: none; /* Скрыто по умолчанию */
+            position: fixed;
+            z-index: 10;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.9);
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-content {
+            max-width: 80%;
+            max-height: 80%;
+        }
+        .modal-content img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 35px;
+            color: #fff;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .close:hover,
+        .close:focus {
+            color: #bbb;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<div class="spot" id="spot1">
+    <img src="555.png" alt="Пятно 1">
+</div>
+
+<div class="spot" id="spot2">
+    <img src="666.png" alt="Пятно 2">
+</div>
+
+<div class="spot" id="spot3">
+    <img src="777.png" alt="Пятно 3">
+</div>
+<div class="spot" id="spot4">
+    <img src="888.png" alt="Пятно 4">
+</div>
+
+<div class="spot" id="spot5">
+    <img src="999.png" alt="Пятно 5">
+</div>
+
+
+
+<div class="large-text">Services</div>
+
+
+
+  <div class="cons_img1">
+<img src="111.png">
+</div>
+
+  <div class="cons_img2">
+<img src="222.png">
+</div>
+
+ <div class="cons_img3">
+<img src="333.png">
+</div>
+<div class="cons_img4">
+<img src="444.png">
+</div>
+<div class="header" id="header">
+        <img src="logo.png" alt="TRIADA Logo" class="logo-img">
+        <div class="contacts">
+            <div class="dropdown">
+                <span>Контакты</span>
+                <div class="dropdown-content">
+                    <a href="tel:+79029248099" class="tel">8(902) 924-80-99</a>
+                    <a href="https://www.instagram.com/triada_tattoo?igsh=bjU2Ym5obTR3MWFj" target="_blank">Inst</a>
+                    <a href="https://t.me/Triada_tattoo_studio" target="_blank">Tg</a>
+                    <a href="https://vk.com/triada__tattoo" target="_blank">VK</a>
+                </div>
+            </div>
+            <div class="adress">
+                <a href="https://yandex.ru/maps/62/krasnoyarsk/house/novomlinskaya_ulitsa_15/bUsYcQBkSEQEQFtsfXxwdHRqbA==" target="_blank">Адрес</a>
+            </div>
+            <div class="zap">
+                <a href="https://wa.me/+79029248099?text=Здравствуйте!%20Я%20хочу%20записаться%20на%20прием%20в%20студии%20TRIADA!">Записаться</a>
+            </div>
+        </div>
+    </div>
+
+
+    <h2>Татуировки</h2>
+    <div class="gallery-container" id="tattoo-gallery" style="margin-top: 40px;">
+<h2 style="font-size: 80px; text-align: center; margin-bottom: 40px; color: gray;">Тату</h2>
+        <div class="gallery">
+            <img src="tatt1.jpg" class="gallery-image" alt="Tattoo 1" onclick="openModal('tatt1.jpg')">
+            <img src="tatt2.jpg" class="gallery-image" alt="Tattoo 2" onclick="openModal('tatt2.jpg')">
+            <img src="tatt3.jpg" class="gallery-image" alt="Tattoo 3" onclick="openModal('tatt3.jpg')">
+ <img src="tatt4.jpg" class="gallery-image" alt="Tattoo 4" onclick="openModal('tatt4.jpg')">
+            <img src="tatt5.jpg" class="gallery-image" alt="Tattoo 5" onclick="openModal('tatt5.jpg')">
+            <img src="tatt6.jpg" class="gallery-image" alt="Tattoo 6" onclick="openModal('tatt6.jpg')">
+        </div>
+        <img src="arrow.png" class="arrow left-arrow" onclick="prevImage('tattoo-gallery')">
+        <img src="arrow.png" class="arrow right-arrow" onclick="nextImage('tattoo-gallery')">
+    </div>
+  <a    style=" margin-left: 280px; margin-top:-15px;"  href="https://wa.me/+79029248099?text=Здравствуйте!%20Я%20хочу%20получить%20консультацию%20по%20тату!" class="glow-on-hover">Получить консультацию</a>
+        <a style=" margin-right: 280px; margin-top:-41px;"  href="https://wa.me/+79029248099?text=Здравствуйте!%20Я%20хочу%20записаться%20на%20тату!" class="glow-on-hover">Записаться</a>
+    <h2 style="font-size: 80px; margin-top: 150px; margin-bottom: 80px; text-align: center;  color: gray;">Перманентный<br> макияж</h2>
+    <div class="gallery-container" id="piercing-gallery">
+        <div class="gallery">
+            <img src="pm1.jpg" class="gallery-image" alt="Piercing 1" onclick="openModal('pm1.jpg')">
+            <img src="pm2.jpg" class="gallery-image" alt="Piercing 2" onclick="openModal('pm2.jpg')">
+            <img src="pm3.jpg" class="gallery-image" alt="Piercing 3" onclick="openModal('pm3.jpg')">
+    <img src="pm4.jpg" class="gallery-image" alt="Piercing 4" onclick="openModal('pm4.jpg')">
+            <img src="pm5.jpg" class="gallery-image" alt="Piercing 5" onclick="openModal('pm5.jpg')">
+            <img src="pm6.jpg" class="gallery-image" alt="Piercing 6" onclick="openModal('pm6.jpg')">
+    <img src="pm7.jpg" class="gallery-image" alt="Piercing 7" onclick="openModal('pm7.jpg')">
+            <img src="pm8.jpg" class="gallery-image" alt="Piercing 8" onclick="openModal('pm8.jpg')">
+        
+        </div>
+        <img src="arrow.png" class="arrow left-arrow" onclick="prevImage('piercing-gallery')">
+        <img src="arrow.png" class="arrow right-arrow1" onclick="nextImage('piercing-gallery')">
+    </div>
+  <a   style=" margin-left: 280px; margin-top:-20px;"                 href="https://wa.me/+79029248099?text=Здравствуйте!%20Я%20хочу%20получить%20консультацию%20по%20тату!" class="glow-on-hover">Получить консультацию</a>
+        <a  style=" margin-right: 280px; margin-top:-42px;" href="https://wa.me/+79029248099?text=Здравствуйте!%20Я%20хочу%20записаться%20на%20тату!" class="glow-on-hover">Записаться</a>
+
+    <h2 style="font-size: 80px; margin-top: 150px; margin-bottom: 60px; text-align: center; color: gray; ">Пирсинг</h2>
+    <div class="gallery-container" id="makeup-gallery">
+        <div class="gallery">
+            <img src="mp1.jpg" class="gallery-image" alt="Makeup 1" onclick="openModal('mp1.jpg')">
+            <img src="mp2.jpg" class="gallery-image" alt="Makeup 2" onclick="openModal('mp2.jpg')">
+            <img src="mp3.jpg" class="gallery-image" alt="Makeup 3" onclick="openModal('mp3.jpg')">
+   <img src="mp4.jpg" class="gallery-image" alt="Makeup 4" onclick="openModal('mp4.jpg')">
+            <img src="mp5.jpg" class="gallery-image" alt="Makeup 5" onclick="openModal('mp5.jpg')">
+            <img src="mp6.jpg" class="gallery-image" alt="Makeup 6" onclick="openModal('mp6.jpg')">
+   <img src="mp7.jpg" class="gallery-image" alt="Makeup 7" onclick="openModal('mp7.jpg')">
+            <img src="mp8.jpg" class="gallery-image" alt="Makeup 8" onclick="openModal('mp8.jpg')">
+      
+        </div>
+        <img src="arrow.png" class="arrow left-arrow" onclick="prevImage('makeup-gallery')">
+        <img src="arrow.png" class="arrow right-arrow2" onclick="nextImage('makeup-gallery')">
+
+    </div>
+<a   style=" margin-left: 280px; margin-top: -1%;"                 href="https://wa.me/+79029248099?text=Здравствуйте!%20Я%20хочу%20получить%20консультацию%20по%20тату!" class="glow-on-hover">Получить консультацию</a>
+        <a  style=" margin-right: 280px; margin-top: -2.8%;" href="https://wa.me/+79029248099?text=Здравствуйте!%20Я%20хочу%20записаться%20на%20тату!" class="glow-on-hover">Записаться</a>
+
+        <!-- Модальное окно -->
+    <div id="myModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <div class="modal-content">
+            <img id="modalImage" src="" alt="Увеличенное изображение">
+        </div>
+    </div>
+
+    <script>
+        let currentIndices = {
+            'tattoo-gallery': 1,
+            'piercing-gallery': 1,
+            'makeup-gallery': 1
+        };
+
+        function showImage(galleryId, index) {
+            const galleryContainer = document.getElementById(galleryId);
+            const gallery = galleryContainer.querySelector('.gallery');
+            const images = galleryContainer.querySelectorAll('.gallery-image');
+            if (index >= images.length) {
+                currentIndices[galleryId] = 0;
+            } else if (index < 0) {
+                currentIndices[galleryId] = images.length - 1;
+            } else {
+                currentIndices[galleryId] = index;
+            }
+
+            const offset = -(currentIndices[galleryId] - 1) * (100 / 3); 
+            gallery.style.transform = `translateX(${offset}%)`;
+
+            images.forEach((img, i) => {
+                if (i === currentIndices[galleryId]) {
+                    img.style.transform = 'scale(1.2)';
+                    img.style.opacity = '1';
+                } else {
+                    img.style.transform = 'scale(1)';
+                    img.style.opacity = '0.5';
+                }
+            });
+        }
+
+        function nextImage(galleryId) {
+            showImage(galleryId, currentIndices[galleryId] + 1);
+        }
+
+        function prevImage(galleryId) {
+            showImage(galleryId, currentIndices[galleryId] - 1);
+        }
+
+        // Функция для открытия модального окна
+        function openModal(imageSrc) {
+            document.getElementById('modalImage').src = imageSrc;
+            document.getElementById('myModal').style.display = "flex";
+        }
+
+        // Функция для закрытия модального окна
+        function closeModal() {
+            document.getElementById('myModal').style.display = "none";
+        }
+
+        // Показываем начальные изображения
+        showImage('tattoo-gallery', currentIndices['tattoo-gallery']);
+        showImage('piercing-gallery', currentIndices['piercing-gallery']);
+        showImage('makeup-gallery', currentIndices['makeup-gallery']);
+
+
+
+// Показать и скрыть выпадающее меню с задержкой
+        const dropdown = document.querySelector('.dropdown');
+        const dropdownContent = document.querySelector('.dropdown-content');
+
+        let timer;
+
+        dropdown.addEventListener('mouseenter', () => {
+            clearTimeout(timer);
+            dropdownContent.style.display = 'block';
+        });
+
+        dropdown.addEventListener('mouseleave', () => {
+            timer = setTimeout(() => {
+                dropdownContent.style.display = 'none';
+            }, 500); // Задержка перед скрытием в миллисекундах
+        });
+
+        dropdownContent.addEventListener('mouseenter', () => {
+            clearTimeout(timer);
+        });
+
+        dropdownContent.addEventListener('mouseleave', () => {
+            timer = setTimeout(() => {
+                dropdownContent.style.display = 'none';
+            }, 500);
+        });
+
+
+
+
+
+
+    </script>
+</body>
+</html>

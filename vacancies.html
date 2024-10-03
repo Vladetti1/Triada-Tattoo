@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вакансии - Студия TRIADA</title>
+    <style>
+
+
+.spot {
+    position: absolute;
+    z-index: 1; /* Установите z-index, чтобы изображения пятен находились ниже текста и других элементов */
+}
+
+#spot1 {
+    top: 200px; /* Задайте точное положение пятна 1 */
+    left: 25%;
+transform: scale(6);
+}
+
+#spot2 {
+    top: 1040px; /* Задайте точное положение пятна 2 */
+    left: 28%;
+transform: scale(5);
+}
+
+#spot3 {
+    top: 745px; /* Задайте точное положение пятна 3 */
+    right: 38%;
+transform: scale(2.7);
+}
+
+#spot4 {
+    top: 755px; /* Задайте точное положение пятна 3 */
+    right: 57%;
+transform: scale(2);
+}
+#spot5 {
+    top: 765px; /* Задайте точное положение пятна 3 */
+    right: 33.5%;
+transform: scale(1.9);
+}
+
+
+
+
+
+
+
+.spot img {
+    width: 100px; /* Подберите нужный размер изображения пятна */
+    height: auto;
+    opacity: 0.7; /* Сделайте пятна полупрозрачными, если это нужно для дизайна */
+}
+
+
+
+.smoke {
+    position: absolute; /* Используем absolute для позиционирования относительно ближайшего родителя с position: relative */
+    bottom: -26%; /* Смещение вниз относительно нижнего края родителя */
+    left: -20%; /* Смещение влево относительно левого края родителя */
+    width: 120%; /* Увеличиваем ширину, чтобы дым полностью закрывал нижнюю часть */
+    height: auto;
+    transform: translateY(600px); /* Сдвигаем изображение на 100px вниз */
+    opacity: 0.9;
+    z-index: -10; /* Помещаем дым за другие элементы */
+}
+
+
+
+
+
+
+
+@font-face {
+            font-family: 'ExyleC';
+            src: url('exylec.otf') format('truetype');
+        }
+
+        @font-face {
+            font-family: 'Copperplate';
+            src: url('copperplate.otf') format('truetype');
+        }
+
+
+@font-face {
+            font-family: 'Virginia';
+            src: url('Virginia.ttf') format('truetype');
+        }
+
+
+
+
+.large-text {
+    font-family: 'Virginia';
+    font-size: 9vw; /* Установите нужный размер шрифта */
+    color: #00FFCC; /* Цвет шрифта */
+position: absolute;
+   
+    top: 75%; /* Измените это значение на подходящее для вашего дизайна */
+    right: 19vw; /* Расположите по вашему усмотрению */
+    transform: rotate(90deg); /* Повернуть текст */
+  
+    z-index: 5; /* Чтобы текст был поверх других элементов */
+    transform: translateY(-50%) rotate(90deg); /* Центрирование по вертикали и поворот текста */
+/* Чтобы текст не переносился на другую строку */
+
+}
+
+
+
+
+
+.contacts {
+            display: flex;
+            align-items: center;
+            position: relative;
+            left: -30px; /* Сместить блок влево */
+     transform: translateX(-25vw);
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+            margin-left: 1500px;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #000; /* Черный фон */
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            margin-top: 10px;
+        }
+
+        .dropdown-content a {
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+
+        .contacts .adress a,
+        .contacts .zap a {
+            color: #000000;
+            text-decoration: none;
+            margin-left: 20px;
+        }
+
+        body {
+            font-family: 'Copperplate';
+            background: black;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+        .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            height: 50px;
+            background-color: #808080;
+            display: flex;
+            align-items: center;
+            padding-left: 0px;
+            padding-right: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 10;
+            color: #000;
+ font-family: 'ExyleC';
+ font-size: 25px;
+        }
+
+        .header img {
+            height: 40px;
+            margin-left: 10px;
+        }
+
+        .header .contact1 {
+            margin-left: auto;
+ font-size: 25px;
+        }
+
+        .header .contact1 a {
+            color: #000000;
+            text-decoration: none;
+            margin-bottom: 3px;
+ font-size: 25px;
+        }
+
+        .header .contact1 a.tel {
+            display: block;
+            margin-bottom: 5px;
+ font-size: 25px;
+        }
+
+        .header .contact1 a:not(.tel) {
+            display: inline-block;
+            margin-right: 10px;
+ font-size: 25px;
+        }
+
+        .header .adress a,
+        .header .zap a {
+            color: #000000;
+            text-decoration: none;
+            margin-left: 10px;
+ font-size: 25px;
+        }
+
+        .header .adress {
+            margin-left: 5px;
+             font-size: 25px;
+        }
+
+        .header .zap {
+            margin-left: 5px;
+            transform: translateX(-5px);
+            font-size: 25px;
+        }
+
+        .small-logo {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            width: 50px;
+            height: auto;
+        }
+
+        .content {
+            position: relative;
+            text-align: center;
+            margin-top: 80px; /* Увеличьте отступ, чтобы учесть высоту хедера */
+        }
+        .content h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        .content p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        .menu {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            gap: 40px;
+        }
+        .menu a {
+            text-decoration: none;
+            color: #00cccc;
+            font-size: 24px;
+            margin: 10px 0;
+            display: inline-block;
+            padding: 10px 20px;
+            background: #111;
+            border-radius: 10px;
+            position: relative;
+            transition: color 0.3s;
+        }
+        .menu a:before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            width: calc(100% + 4px);
+            height: calc(100% + 4px);
+            background: linear-gradient(45deg, #00ffff, #00ffd5, #00bfff, #007fff, #00bfff, #00ffd5, #00ffff);
+            filter: blur(5px);
+            z-index: -1;
+            border-radius: 10px;
+            animation: glowing 20s linear infinite;
+            opacity: 0;
+            transition: opacity .3s ease-in-out;
+        }
+        .menu a:hover:before {
+            opacity: 1;
+        }
+        .menu a:active {
+            color: #000;
+        }
+        .menu a:active:after {
+            background: transparent;
+        }
+        .menu a:after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: #111;
+            top: 0;
+            left: 0;
+            border-radius: 10px;
+            z-index: -1;
+        }
+        @keyframes glowing {
+            0% { background-position: 0 0; }
+            50% { background-position: 400% 0; }
+            100% { background-position: 0 0; }
+        }
+        .button {
+    display: inline-block;
+    padding: 15px 30px;
+    color: #00FFCC;
+    font-size: 28px; /* Увеличенный размер текста */
+    background: #111;
+    border-radius: 10px;
+    text-decoration: none;
+    cursor: pointer;
+    position: relative;
+    z-index: 10;
+    border: 2px solid #00FFCC;
+    transition: color 0.3s;
+
+
+}
+
+.button:before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    background: linear-gradient(45deg, #00ffff, #00ffd5, #00bfff, #007fff, #00bfff, #00ffd5, #00ffff);
+    filter: blur(5px);
+    z-index: -1;
+    border-radius: 10px;
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+}
+
+.button:hover:before {
+    opacity: 1;
+}
+
+.button:active {
+    color: #000;
+}
+
+.button:active:after {
+    background: transparent;
+}
+
+.button:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    top: 0;
+    left: 0;
+    border-radius: 10px;
+    z-index: -1;
+}
+        @keyframes glowing {
+            0% { background-position: 0 0; }
+            50% { background-position: 400% 0; }
+            100% { background-position: 0 0; }
+        }
+        .footer {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 40px;
+            background-color: #1a1a1a;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            padding-right: 20px;
+            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 10;
+            color: #fff;
+        }
+        @media (max-width: 768px) {
+            .menu {
+                flex-direction: column;
+                align-items: center;
+                top: 60%;
+                transform: translateY(-50%);
+            }
+            .menu a {
+                margin: 10px 0;
+                font-size: 20px;
+            }
+            .header {
+                height: 50px;
+                padding-left: 10px;
+            }
+            .header img {
+                height: 30px;
+            }
+            .footer {
+                height: 30px;
+                padding-right: 10px;
+                font-size: 14px;
+            }
+        }
+        @media (max-width: 480px) {
+            .menu a {
+                font-size: 18px;
+            }
+            .footer {
+                height: 25px;
+                padding-right: 5px;
+                font-size: 12px;
+            }
+            .header {
+                height: 40px;
+                padding-left: 5px;
+            }
+            .header img {
+                height: 25px;
+            }
+        }
+
+
+.smoke-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none; /* Слой будет невидим для курсора */
+
+
+
+
+
+
+    </style>
+</head>
+<body>
+
+<div class="header" id="header">
+        <img src="logo.png" alt="TRIADA Logo" class="logo-img">
+        <div class="contacts">
+            <div class="dropdown">
+                <span>Контакты</span>
+                <div class="dropdown-content">
+                    <a href="tel:+79029248099" class="tel">8(902) 924-80-99</a>
+                    <a href="https://www.instagram.com/triada_tattoo?igsh=bjU2Ym5obTR3MWFj" target="_blank">Inst</a>
+                    <a href="https://t.me/Triada_tattoo_studio" target="_blank">Tg</a>
+                    <a href="https://vk.com/triada__tattoo" target="_blank">VK</a>
+                </div>
+            </div>
+            <div class="adress">
+                <a href="https://yandex.ru/maps/62/krasnoyarsk/house/novomlinskaya_ulitsa_15/bUsYcQBkSEQEQFtsfXxwdHRqbA==" target="_blank">Адрес</a>
+            </div>
+            <div class="zap">
+                <a href="https://wa.me/+79029248099?text=Здравствуйте!%20Я%20хочу%20записаться%20на%20прием%20в%20студии%20TRIADA!">Записаться</a>
+            </div>
+        </div>
+    </div>
+
+<div class="content">
+
+ <div class="spot" id="spot1">
+    <img src="spot1.png" alt="Пятно 1">
+</div>
+
+<div class="spot" id="spot2">
+    <img src="spot2.png" alt="Пятно 2">
+</div>
+
+<div class="spot" id="spot3">
+    <img src="spot3.png" alt="Пятно 3">
+</div>
+
+<div class="spot" id="spot4">
+    <img src="spot4.png" alt="Пятно 4">
+</div>
+<div class="spot" id="spot5">
+    <img src="spot4.png" alt="Пятно 5">
+</div>
+
+
+
+
+<div class="large-text">Training</div>
+    <h2 style="color: gray;">Если ты тату мастер, который<br>
+ хочет работать в классной <br>
+команде и комфортных условиях,<br>
+ то тебе к нам!</h2>
+<img src="team.jpg" width="460" height="auto">
+ 
+    <p style="font-size: 21px; color: gray;">Также у нас есть места на аренду:<br>
+на полмесяца 8 000 рублей;<br>
+на месяц 12 000 рублей<br></p>
+<p style="font-size: 21px; color: gray;">Мы предоставим вам:</p>
+<p style="font-size: 21px; color: gray;">Кушетку, холдер и столик;</p>
+<p style="font-size: 21px; color: gray;">Одноразовые расходные материалы;</p>
+<p style="font-size: 21px; color: gray;">Принтер и трансферную бумагу;</p>
+<p style="font-size: 21px; color: gray;">Также для ваших клиентов будут<br> предоставлены одноразовые <br>тапочки, чай, кофе и конфеты.</p>
+
+    <a href="https://wa.me/+79029248099?text=Здравствуйте!%20Я%20хочу%20узнать%20о%20вакансиях%20в%20студии%20TRIADA!" class="button">Хочу работать с Вами!</a>
+</div>
+
+<div>
+    <img src="smoke.png" alt="Smoke"  class="smoke">
+</div>
+
+
+ <script>
+const dropdown = document.querySelector('.dropdown');
+const dropdownContent = document.querySelector('.dropdown-content');
+
+let timer;
+
+dropdown.addEventListener('mouseenter', () => {
+    clearTimeout(timer);
+    dropdownContent.style.display = 'block';
+});
+
+dropdown.addEventListener('mouseleave', () => {
+    timer = setTimeout(() => {
+        dropdownContent.style.display = 'none';
+    }, 500);
+});
+
+dropdownContent.addEventListener('mouseenter', () => {
+    clearTimeout(timer);
+});
+
+dropdownContent.addEventListener('mouseleave', () => {
+    timer = setTimeout(() => {
+        dropdownContent.style.display = 'none';
+    }, 500);
+});
+
+</script>
+
+</body>
+</html>

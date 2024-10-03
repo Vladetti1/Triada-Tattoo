@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мастера - Студия TRIADA</title>
+    <style>
+        
+        @font-face {
+            font-family: 'ExyleC';
+            src: url('exylec.otf') format('truetype');
+        }
+
+        @font-face {
+            font-family: 'Copperplate';
+            src: url('copperplate.otf') format('truetype');
+        }
+
+
+@font-face {
+            font-family: 'Virginia';
+            src: url('Virginia.ttf') format('truetype');
+        }
+        
+        
+        
+ 
+          .back-to-home {
+            width: 220px;
+            height: 50px;
+            border: none;
+            outline: none;
+            color: #fff;
+            background: #111;
+            cursor: pointer;
+            position: relative;
+            z-index: 0;
+            border-radius: 10px;
+            text-align: center;
+            line-height: 50px;
+            transition: color 0.3s;
+            margin: 20px auto;
+            display: block;
+        }
+
+        .back-to-home:before {
+            content: '';
+            background: linear-gradient(45deg, #00ffff, #00ffd5, #00bfff, #007fff, #00bfff, #00ffd5, #00ffff);
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            background-size: 400%;
+            z-index: -1;
+            filter: blur(5px);
+            width: calc(100% + 4px);
+            height: calc(100% + 4px);
+            animation: glowing 20s linear infinite;
+            opacity: 0;
+            transition: opacity .3s ease-in-out;
+            border-radius: 10px;
+        }
+
+        .back-to-home:hover:before {
+            opacity: 1;
+        }
+
+        .back-to-home:after {
+            z-index: -1;
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: #111;
+            left: 0;
+            top: 0;
+            border-radius: 10px;
+        }
+        
+        
+        
+        
+          .gallery-container {
+            position: relative;
+           width: 40%; 
+    height: auto; 
+            overflow: hidden;
+ margin-bottom: 50px;
+
+
+           
+          
+        }
+        .gallery {
+            display: flex;
+            transition: transform 0.5s ease;
+            margin-left: -50px;
+      
+ 
+        }
+        .gallery-image {
+            min-width: calc(100% / 3);
+            transition: transform 0.5s ease;
+   z-index: 10;
+            cursor: pointer;
+        }
+        .gallery-image:not(:nth-child(2)) {
+            opacity: 0.5;
+ z-index: -10;
+        }
+        .gallery-image:nth-child(2) {
+            transform: scale(1.2);
+ z-index: 10;
+        }
+
+        .arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 150px;
+            height: 150px;
+            cursor: pointer;
+
+        }
+        .left-arrow {
+            left: 60px;
+
+        }
+        .right-arrow {
+            right: 100px;
+ transform: rotate(180deg);
+top: 28%;
+
+        }
+
+ .right-arrow1 {
+            right: 100px;
+ transform: rotate(180deg);
+top: 44px;
+
+        }
+
+ .right-arrow2 {
+            right: 100px;
+ transform: rotate(180deg);
+top: 86px;
+ 
+        }
+
+        /* Модальное окно */
+        .modal {
+            display: none; /* Скрыто по умолчанию */
+            position: fixed;
+            z-index: 10;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.9);
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-content {
+            max-width: 80%;
+            max-height: 80%;
+        }
+        .modal-content img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 35px;
+            color: #fff;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .close:hover,
+        .close:focus {
+            color: #bbb;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        
+        
+        
+        
+        
+        
+        
+        
+.contacts {
+            display: flex;
+            align-items: center;
+            position: relative;
+            left: -30px; 
+    transform: translateX(-25vw);
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+            margin-left: 1500px;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #000; 
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            margin-top: 10px;
+        }
+
+        .dropdown-content a {
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+
+        .contacts .adress a,
+        .contacts .zap a {
+            color: #000000;
+            text-decoration: none;
+            margin-left: 20px;
+        }
+
+     
+        body {
+           font-family: 'Copperplate';
+          
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+              background-color: black; 
+    
+
+  background-image: url('help.PNG'); 
+  background-repeat: no-repeat; /* Без повторения */
+  background-position: 40%  ;/* Позиция фона */
+  background-size: 106%; /* Картинка покрывает весь экран */
+  /* background-attachment: fixed; /* Фиксируем фон */
+
+  
+        }
+
+        .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            height: 50px;
+            background-color: #808080;
+            display: flex;
+            align-items: center;
+            padding-left: 0px;
+            padding-right: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 10;
+            color: #000;
+             font-family: 'ExyleC';
+ font-size: 25px;
+        }
+
+        .header img {
+            height: 40px;
+            margin-left: 10px;
+        }
+
+        .header .contact1 {
+            margin-left: auto;
+        }
+
+        .header .contact1 a {
+            color: #000000;
+            text-decoration: none;
+            margin-bottom: 3px;
+        }
+
+        .header .contact1 a.tel {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .header .contact1 a:not(.tel) {
+            display: inline-block;
+            margin-right: 10px;
+        }
+
+        .header .adress a,
+        .header .zap a {
+            color: #000000;
+            text-decoration: none;
+            margin-left: 10px;
+        }
+
+        .header .adress {
+            margin-left: 5px;
+   \
+        }
+
+        .header .zap {
+            margin-left: 5px;
+            transform: translateX(-5px);
+        }
+
+        .small-logo {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            width: 50px;
+            height: auto;
+        }
+
+        .content {
+            text-align: center;
+            margin-top: 80px;
+            padding: 20px;
+        }
+        
+        .master {
+            display: flex;
+            flex-direction: row;
+            margin: 20px 0;
+            gap: 20px;
+            text-align: left;
+        }
+
+        .master img {
+            width: 300px;
+            height: auto;
+            cursor: pointer;
+        }
+
+        .master h3 {
+            font-size: 24px;
+        }
+
+        .master p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        .portfolio {
+            display: none;
+            
+
+        
+            margin: 20px auto;
+        
+        
+        }
+
+       
+
+        .glow-on-hover {
+                 font-family: 'Copperplate';
+            width: 220px;
+            height: 50px;
+            border: 2px solid #00FFCC; 
+            outline: none;
+            color: turquoise;
+            background: #111;
+            cursor: pointer;
+            position: relative;
+            z-index: 0;
+            border-radius: 10px;
+            text-align: center;
+            line-height: 50px;
+            transition: color 0.3s;
+             font-size: 28px;
+        }
+
+        .glow-on-hover:before {
+            content: '';
+            background: linear-gradient(45deg, #00ffff, #00ffd5, #00bfff, #007fff, #00bfff, #00ffd5, #00ffff);
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            background-size: 400%;
+            z-index: -1;
+            filter: blur(5px);
+            width: calc(100% + 4px);
+            height: calc(100% + 4px);
+            animation: glowing 20s linear infinite;
+            opacity: 0;
+            transition: opacity .3s ease-in-out;
+            border-radius: 10px;
+        }
+
+        .glow-on-hover:hover:before {
+            opacity: 1;
+        }
+
+        .glow-on-hover:after {
+            z-index: -1;
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: #111;
+            left: 0;
+            top: 0;
+            border-radius: 10px;
+        }
+
+        @keyframes glowing {
+            0% { background-position: 0 0; }
+            50% { background-position: 400% 0; }
+            100% { background-position: 0 0; }
+        }
+
+        @media (max-width: 768px) {
+            .menu {
+                flex-direction: column;
+                align-items: center;
+                margin-top: 30px;
+            }
+
+            .menu a {
+                margin: 10px 0;
+                font-size: 20px;
+            }
+
+            .header {
+                height: 50px;
+                padding-left: 10px;
+            }
+
+            .header img {
+                height: 30px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .menu a {
+                font-size: 18px;
+            }
+
+            .header {
+                height: 40px;
+                padding-left: 5px;
+            }
+
+            .header img {
+                height: 25px;
+            }
+        }
+
+     
+
+
+    </style>
+</head>
+<body>
+      <div class="header" id="header">
+        <img src="logo.png" alt="TRIADA Logo" class="logo-img">
+        <div class="contacts">
+            <div class="dropdown">
+                <span>Контакты</span>
+                <div class="dropdown-content">
+                    <a href="tel:+79029248099" class="tel">8(902) 924-80-99</a>
+                    <a href="https://www.instagram.com/triada_tattoo?igsh=bjU2Ym5obTR3MWFj" target="_blank">Inst</a>
+                    <a href="https://t.me/Triada_tattoo_studio" target="_blank">Tg</a>
+                    <a href="https://vk.com/triada__tattoo" target="_blank">VK</a>
+                </div>
+            </div>
+            <div class="adress">
+                <a href="https://yandex.ru/maps/62/krasnoyarsk/house/novomlinskaya_ulitsa_15/bUsYcQBkSEQEQFtsfXxwdHRqbA==" target="_blank">Адрес</a>
+            </div>
+            <div class="zap">
+                <a href="https://wa.me/+79029248099?text=Здравствуйте!%20Я%20хочу%20записаться%20на%20прием%20в%20студии%20TRIADA!">Записаться</a>
+            </div>
+        </div>
+    </div>
+
+ <!-- <img src="help.PNG" style="z-index: -100;" alt="Описание изображения" class="fixed-image">-->
+
+    <div class="content">
+        <!-- Мастера -->
+        <div id="vladislav" class="master">
+            <img src="vladislav.jpg" alt="Владислав">
+            <div>
+                <h3 style="color: gray; font-size: 30px; text-align: center; margin-bottom: 80px;">Старший мастер Владислав</h3>
+                <p style="color: gray; text-align: center;">Это Владислав, старший мастер студии TRIADA, с опытом работы более<br> 15 лет. Реализует работу любой сложности с завораживающим сюжетом.</p>
+               
+                    <p style="color: gray; text-align: center; ">-Графика</p>
+                    <p style="color: gray; text-align: center;">-Перекрытия</p>
+                    <p style="color: gray; text-align: center;">-Масштабные проекты с нуля</p>
+               
+                <button style="left: 35%"  class="glow-on-hover" onclick="togglePortfolio('tattoo-gallery')">Портфолио</button>
+            </div>
+        </div>
+  
+           <div class="gallery-container portfolio" id="tattoo-gallery" >
+
+        <div class="gallery">
+           <img src="vladislavwork1.jpg" class="gallery-image" alt="Tattoo 1" onclick="openModal('vladislavwork1.jpg')">
+            <img src="vladislavwork2.jpg" class="gallery-image" alt="Tattoo 2" onclick="openModal('vladislavwork2.jpg')">
+            <img src="vladislavwork3.jpg" class="gallery-image" alt="Tattoo 3" onclick="openModal('vladislavwork3.jpg')">
+ <img src="vladislavwork4.jpg" class="gallery-image" alt="Tattoo 4" onclick="openModal('vladislavwork4.jpg')">
+            <img src="vladislavwork5.PNG" class="gallery-image" alt="Tattoo 5" onclick="openModal('vladislavwork5.png')">
+            <img src="vladislavwork6.jpg" class="gallery-image" alt="Tattoo 6" onclick="openModal('vladislavwork6.jpg')">
+        </div>
+        <img src="arrow.png" class="arrow left-arrow" onclick="prevImage('tattoo-gallery')">
+        <img src="arrow.png" class="arrow right-arrow" onclick="nextImage('tattoo-gallery')">
+    </div>
+
+      
+            <img src="anastasia.jpg" alt="Анастасия" style="margin-left: 60%; margin-top: 5%;" >
+            
+                <h3 style="color: gray; margin-left: -30%; font-size: 30px; margin-top: -20%; z-index: -10;  margin-bottom: 40px;">Мастер Анастасия</h3>
+                <p style="color: gray;  margin-left: -31%;">Это Анастасия, мастер студии TRIADA. Работает в студии 3 года. Реализует как маленькие</p>
+               <p style="color: gray;  margin-left: -30%;">  тату, так и  большие проекты.</p>
+                   <p style="color: gray;  margin-left: -30%;">  К ней приходят со словами: «Мне Вас посоветовали!»</p>
+                
+                    <p style="color: gray; margin-left: -30%;">-Графика</p>
+                    <p style="color: gray;margin-left: -30%; ">-Перекрытия</p>
+                    <p style="color: gray; margin-left: -30%;">-Цветные тату</p>
+                    <p style="color: gray; margin-left: -30%;">-Перманентный макияж</p>
+                
+                <button  style=" margin-left: -30%;"class="glow-on-hover" onclick="togglePortfolio('piercing-gallery')">Портфолио</button>
+            </div>
+        </div>
+
+         <div class="gallery-container portfolio" id="piercing-gallery" >
+
+        <div class="gallery">
+                <img src="anastasiawork1.jpeg"  class="gallery-image"  alt="Анастасия Работа 1" onclick="openModal('anastasiawork1.jpeg')">
+                <img src="anastasiawork2.jpeg" class="gallery-image"  alt="Анастасия Работа 2" onclick="openModal('anastasiawork2.jpeg')">
+                <img src="anastasiawork3.jpeg" class="gallery-image"  alt="Анастасия Работа 3" onclick="openModal('anastasiawork3.jpeg')">
+                <img src="anastasiawork4.jpeg" class="gallery-image"  alt="Анастасия Работа 4" onclick="openModal('anastasiawork4.jpeg')">
+                <img src="anastasiawork5.jpeg" class="gallery-image"  alt="Анастасия Работа 5" onclick="openModal('anastasiawork5.jpeg')">
+                <img src="anastasiawork6.jpeg" class="gallery-image"  alt="Анастасия Работа 6" onclick="openModal('anastasiawork6.jpeg')">
+            </div>
+       <img src="arrow.png" class="arrow left-arrow" onclick="prevImage('piercing-gallery')">
+        <img src="arrow.png" class="arrow right-arrow" onclick="nextImage('piercing-gallery')">
+        </div>
+
+        
+            <img src="irina.jpg" alt="Ирина" style="margin-top: 5%; margin-left: 3%;">
+            
+                <h3 style="color: gray; font-size: 30px; margin-left: 45%;  margin-bottom: 60px; margin-top: -19%;">Мастер Ирина</h3>
+                <p style="color: gray; margin-left: 28%; ">Это Ирина, мастер студии TRIADA. Работает в студии 5 лет. Она безупречно сделает</p>
+               <p style="color: gray; margin-left: 28%; "> любую татуировку. Ее сильные стороны — это тонкие линии и идеальные шрифты.</p>
+            
+                    <p style="color: gray; margin-left: 50%;">-Графика</p>
+                    <p style="color: gray; margin-left: 49%;">-Перекрытия</p>
+                     <p style="color: gray; margin-left: 48.7%;">-Цветные тату</p>
+                     <p style="color: gray; margin-left: 46%;">-Перманентный макияж</p>
+            
+                <button style=" margin-left: 45%;" class="glow-on-hover" onclick="togglePortfolio('makeup-gallery')">Портфолио</button>
+            </div>
+        </div>
+
+      <div class="gallery-container portfolio" id="makeup-gallery" >
+
+        <div class="gallery">
+                <img src="irinawork1.jpg"  class="gallery-image"  alt="Ирина Работа 1" onclick="openModal('irinawork1.jpg')">
+                <img src="irinawork2.jpg"  class="gallery-image"  alt="Ирина Работа 2" onclick="openModal('irinawork2.jpg')">
+                <img src="irinawork3.jpg" class="gallery-image"  alt="Ирина Работа 3" onclick="openModal('irinawork3.jpg')">
+                <img src="irinawork4.jpg" class="gallery-image"  alt="Ирина Работа 4" onclick="openModal('irinawork4.jpg')">
+                <img src="irinawork5.jpg" class="gallery-image"  alt="Ирина Работа 5" onclick="openModal('irinawork5.jpg')">
+                <img src="irinawork6.jpg" class="gallery-image"  alt="Ирина Работа 6" onclick="openModal('irinawork6.jpg')">
+                <img src="irinawork7.jpg" class="gallery-image"  alt="Ирина Работа 7" onclick="openModal('irinawork7.jpg')">
+            </div>
+     <img src="arrow.png" class="arrow left-arrow" onclick="prevImage('makeup-gallery')">
+        <img src="arrow.png" class="arrow right-arrow" onclick="nextImage('makeup-gallery')">
+        </div>
+
+        
+            <img src="alena.jpg" alt="Алена" style="margin-top: 3%; margin-left: 70%;">
+           
+                <h3 style="color: gray; font-size: 30px; margin-bottom: 40px; margin-top: -17%;margin-left: 30%; ">Мастер Алена</h3>
+                <p style="color: gray; margin-left: 17%;">Это Алена, мастер студии TRIADA с опытом работы 4 года. Ее усидчивости и</p>
+                    <p style="color: gray;  margin-left: 12%;">аккуратности можно позавидовать. Алена также мастер по пирсингу в нашей студии.Она</p>
+                    <p style="color: gray; margin-left: 20%;"> быстро и качественно сделает Вам прокол любой сложности.</p>
+                
+                    <p style="color: gray; margin-left: 35%;">-Графика</p>
+                    <p style="color: gray; margin-left: 35%;">-Пирсинг</p>
+             
+                <button style=" margin-left: 30%;" class="glow-on-hover" onclick="togglePortfolio('3gallery')">Портфолио</button>
+            </div>
+        </div>
+
+   <div class="gallery-container portfolio" id="3gallery" >
+
+        <div class="gallery">
+                <img src="alenawork1.jpg"  class="gallery-image" alt="Алена Работа 1" onclick="openModal('alenawork1.jpg')">
+                <img src="alenawork2.jpg"  class="gallery-image" alt="Алена Работа 2" onclick="openModal('alenawork2.jpg')">
+                <img src="alenawork3.jpg"  class="gallery-image" alt="Алена Работа 3" onclick="openModal('alenawork3.jpg')">
+                <img src="alenawork4.jpg"  class="gallery-image" alt="Алена Работа 4" onclick="openModal('alenawork4.jpg')">
+                <img src="alenawork5.jpg"  class="gallery-image" alt="Алена Работа 5" onclick="openModal('alenawork5.jpg')">
+                <img src="alenawork6.jpg"  class="gallery-image" alt="Алена Работа 6" onclick="openModal('alenawork6.jpg')">
+                <img src="alenawork7.jpg"  class="gallery-image" alt="Алена Работа 7" onclick="openModal('alenawork7.jpg')">
+            </div>
+             <img src="arrow.png" class="arrow left-arrow" onclick="prevImage('3gallery')" >
+        <img src="arrow.png" class="arrow right-arrow" onclick="nextImage('3gallery')" >
+        </div>
+        
+
+        
+   
+
+ <!-- Модальное окно -->
+    <div id="myModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <div class="modal-content">
+            <img id="modalImage" src="" alt="Увеличенное изображение">
+        </div>
+    </div>
+        <script>function togglePortfolio(galleryId) {
+            const portfolio = document.getElementById(galleryId);
+            portfolio.style.display = portfolio.style.display === "block" ? "none" : "block";
+        }
+ 
+</script>
+
+    <script>
+
+// Показать и скрыть выпадающее меню с задержкой
+        const dropdown = document.querySelector('.dropdown');
+        const dropdownContent = document.querySelector('.dropdown-content');
+
+        let timer;
+
+        dropdown.addEventListener('mouseenter', () => {
+            clearTimeout(timer);
+            dropdownContent.style.display = 'block';
+        });
+
+        dropdown.addEventListener('mouseleave', () => {
+            timer = setTimeout(() => {
+                dropdownContent.style.display = 'none';
+            }, 500); // Задержка перед скрытием в миллисекундах
+        });
+
+        dropdownContent.addEventListener('mouseenter', () => {
+            clearTimeout(timer);
+        });
+
+        dropdownContent.addEventListener('mouseleave', () => {
+            timer = setTimeout(() => {
+                dropdownContent.style.display = 'none';
+            }, 500);
+        });
+
+
+    let currentIndices = {
+            'tattoo-gallery': 1,
+            'piercing-gallery': 1,
+            'makeup-gallery': 1,
+        '3gallery': 1 
+        };
+
+        function showImage(galleryId, index) {
+            const galleryContainer = document.getElementById(galleryId);
+            const gallery = galleryContainer.querySelector('.gallery');
+            const images = galleryContainer.querySelectorAll('.gallery-image');
+            if (index >= images.length) {
+                currentIndices[galleryId] = 0;
+            } else if (index < 0) {
+                currentIndices[galleryId] = images.length - 1;
+            } else {
+                currentIndices[galleryId] = index;
+            }
+
+            const offset = -(currentIndices[galleryId] - 1) * (100 / 3); 
+            gallery.style.transform = `translateX(${offset}%)`;
+
+            images.forEach((img, i) => {
+                if (i === currentIndices[galleryId]) {
+                    img.style.transform = 'scale(1.2)';
+                    img.style.opacity = '1';
+                } else {
+                    img.style.transform = 'scale(1)';
+                    img.style.opacity = '0.5';
+                }
+            });
+        }
+
+        function nextImage(galleryId) {
+            showImage(galleryId, currentIndices[galleryId] + 1);
+        }
+
+        function prevImage(galleryId) {
+            showImage(galleryId, currentIndices[galleryId] - 1);
+        }
+
+        // Функция для открытия модального окна
+        function openModal(imageSrc) {
+            document.getElementById('modalImage').src = imageSrc;
+            document.getElementById('myModal').style.display = "flex";
+        }
+
+        // Функция для закрытия модального окна
+        function closeModal() {
+            document.getElementById('myModal').style.display = "none";
+        }
+
+        // Показываем начальные изображения
+        showImage('tattoo-gallery', currentIndices['tattoo-gallery']);
+        showImage('piercing-gallery', currentIndices['piercing-gallery']);
+        showImage('makeup-gallery', currentIndices['makeup-gallery']);
+        showImage('3gallery', currentIndices['3gallery']);
+
+    </script>
+</body>
+</html>

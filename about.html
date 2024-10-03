@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Студия TRIADA</title>
+    <style>
+
+
+
+.spot {
+    position: absolute;
+    z-index: -1; /*  z-index, чтобы изображения пятен находились ниже текста и других элементов */
+}
+
+#spot1 {
+    top: -100px; 
+    left: -1050px;
+transform: scale(0.9);
+}
+
+#spot2 {
+    top: -100px; 
+    left: -995px;
+transform: scale(1);
+}
+
+#spot3 {
+    top: 150px; 
+    left: -920px;
+transform: scale(0/9);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.large-text {
+    font-family: 'Virginia';
+    font-size: 5vw; 
+    color: #00FFCC; 
+position: absolute;
+ top: 80%;
+    right: 78vw;
+    transform: rotate(90deg); 
+  
+    z-index: -11; 
+    transform: translateY(-50%) rotate(-90deg); /* Центрирование по вертикали и поворот текста */
+/* Чтобы текст не переносился на другую строку */
+white-space: nowrap;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+@font-face {
+            font-family: 'ExyleC';
+            src: url('exylec.otf') format('truetype');
+        }
+
+        @font-face {
+            font-family: 'Copperplate';
+            src: url('copperplate.otf') format('truetype');
+        }
+
+@font-face {
+            font-family: 'Virginia';
+            src: url('Virginia.ttf') format('truetype');
+        }
+
+
+.contacts {
+            display: flex;
+            align-items: center;
+            position: relative;
+            left: -30px; 
+    transform: translateX(-25vw);
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+            margin-left: 1500px;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #000; 
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            margin-top: 10px;
+        }
+
+        .dropdown-content a {
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+
+        .contacts .adress a,
+        .contacts .zap a {
+            color: #000000;
+            text-decoration: none;
+            margin-left: 20px;
+        }
+
+
+
+
+        @font-face {
+            font-family: 'Agathiqy';
+            src: url('Agathiqy.ttf') format('truetype');
+        }
+
+        .image-container {
+            position: relative;
+            width: 100%;
+            height: auto;
+        }
+
+        .image-container img {
+            position: absolute;
+            max-width: 380%;
+            height: auto;
+        }
+
+        .image2 {
+            left: 680px; 
+            top: -250px; 
+            z-index: 2; 
+            width: 1000px; 
+            height: auto; 
+        }
+
+        body {
+           font-family: 'Copperplate';
+            background: black;
+            color: #fff;
+            margin: 0;
+          
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            position: relative;
+            padding-top: 60px; 
+        }
+    
+.smoke-background {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('smoke3.png') no-repeat bottom center;
+    background-size: cover;
+    z-index: -1; 
+}
+
+
+
+
+
+
+       .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            height: 50px;
+            background-color: #808080;
+            display: flex;
+            align-items: center;
+            padding-left: 20px;
+            padding-right: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 10;
+            color: #000;
+font-family: 'ExyleC';
+font-size: 25px;
+        }
+
+        .header img {
+            height: 40px;
+            margin-left: 10px;
+        }
+
+        .header .contact1 {
+            margin-left: auto;
+        }
+
+        .header .contact1 a {
+            color: #000000;
+            text-decoration: none;
+            margin-bottom: 3px;
+        }
+
+        .header .contact1 a.tel {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .header .contact1 a:not(.tel) {
+            display: inline-block;
+            margin-right: 10px;
+        }
+
+        .header .adress a,
+        .header .zap a {
+            color: #000000;
+            text-decoration: none;
+            margin-left: 10px;
+        }
+
+        .header .adress {
+            margin-left: 5px;
+   
+        }
+
+        .header .zap {
+            margin-left: 5px;
+  transform: translateX(-5px);
+        }
+
+        .small-logo {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            width: 50px;
+            height: auto;
+        }
+
+        
+
+        
+
+        .content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 500px; 
+            position: relative;
+ margin-left: 250px;
+        }
+
+        .content img {
+            cursor: pointer;
+            max-width: 100%; 
+            height: auto;
+            transition: all 0.5s ease;
+            filter: grayscale(100%);
+        }
+
+        .content video {
+            display: none;
+            cursor: pointer;
+            max-width: 100%;
+            height: auto;
+            margin-top: 110px
+        }
+
+        .overlay-image {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 20%;
+            height: 20%;
+            background: url('overlay.jpg') no-repeat center center;
+            background-size: cover;
+            opacity: 0.5;
+            pointer-events: none;
+            transform: translate(-50%, -50%);
+            border-radius: 35%; /* Скругление изображения */
+        }
+
+        .text-block {
+            text-align: left;
+            max-width: 750px; 
+            margin-left: 50px;
+            position: relative;
+top: 20px;
+color: gray;
+        }
+
+        .reasons {
+            text-align: left;
+            margin-top: 20px;
+color: gray;
+        }
+ .reasons ul {
+list-style: none;
+color: gray;
+        }
+
+    </style>
+    <script>
+        function showVideo() {
+            document.getElementById('image').style.display = 'none';
+            document.getElementById('video').style.display = 'block';
+            document.querySelector('.overlay-image').style.display = 'none'; // Скрытие overlay
+        }
+    </script>
+</head>
+<body>
+
+<div class="smoke-background"></div>
+    <div class="header" id="header">
+        <img src="logo.png" alt="TRIADA Logo" class="logo-img">
+        <div class="contacts">
+            <div class="dropdown">
+                <span>Контакты</span>
+                <div class="dropdown-content">
+                    <a href="tel:+79029248099" class="tel">8(902) 924-80-99</a>
+                    <a href="https://www.instagram.com/triada_tattoo?igsh=bjU2Ym5obTR3MWFj" target="_blank">Inst</a>
+                    <a href="https://t.me/Triada_tattoo_studio" target="_blank">Tg</a>
+                    <a href="https://vk.com/triada__tattoo" target="_blank">VK</a>
+                </div>
+            </div>
+            <div class="adress">
+                <a href="https://yandex.ru/maps/62/krasnoyarsk/house/novomlinskaya_ulitsa_15/bUsYcQBkSEQEQFtsfXxwdHRqbA==" target="_blank">Адрес</a>
+            </div>
+            <div class="zap">
+                <a href="https://wa.me/+79029248099?text=Здравствуйте!%20Я%20хочу%20записаться%20на%20прием%20в%20студии%20TRIADA!">Записаться</a>
+            </div>
+        </div>
+    </div>
+  
+
+            <div class="content">
+                <img id="image" src="studio.jpg" alt="Studio Image" onclick="showVideo()">
+                <div class="overlay-image"></div>
+                <video id="video" src="video.mp4" controls></video>
+            </div>
+            <div class="text-block">
+                <p style="font-size: 21px; text-align: center; margin-left: 20px;">Каждый день мы по кирпичикам строим нашу крепость и <br>более того совместно достигаем небывалых высот. Каждый<br> здесь уникален и незаменим в своем деле.</p>
+                <p style="font-size: 21px; text-align: center; margin-left: 20px;">Из обычной тату-студии превратились в творческое<br> пространство площадью 450 кв. метров в котором каждому<br> есть место для самовыражения!</p>
+                <p style="font-size: 21px; text-align: center; margin-left: 20px;">Сейчас мы одна из самых лучших студий в городе а<br> констатацией этому являетесь Вы – наши клиенты. Все кто<br> выбирают нас вносят огромный вклад в наше развитие. А<br> мы делаем все чтобы Ваше время проведенное в нашем<br> пространстве было особенным.</p>
+                <div class="reasons">
+                    <h3 style="font-size: 21px; margin-left: 20px;">Почему мы?</h3>
+                    <ul>
+                        <li style="font-size: 20px; margin-bottom: 30px;">Нам доверяют уже 5 лет</li>
+                        <li style="font-size: 20px; margin-bottom: 30px;">Мастера с опытом более 15 лет</li>
+                        <li style="font-size: 20px; margin-bottom: 30px;">Более 10 000 довольных клиентов</li>
+                        <li style="font-size: 20px; margin-bottom: 30px;">Самая большая студия в России - 450 кв. метров</li>
+                        <li style="font-size: 20px; margin-bottom: 30px;">Такси за наш счет</li>
+                        <li style="font-size: 20px; margin-bottom: 30px;">Ресторан доставки еды прямо в студии</li>
+                    </ul>
+                </div>
+<div class="spot" id="spot1">
+    <img src="spot9.png" alt="Пятно 1">
+</div>
+
+<div class="spot" id="spot2">
+    <img src="spot10.png" alt="Пятно 2">
+</div>
+<div class="spot" id="spot3">
+    <img src="spot11.png" alt="Пятно 3">
+</div>
+                <div class="large-text">About us</div>
+            </div>
+  
+   
+<script>
+// Показать и скрыть выпадающее меню с задержкой
+        const dropdown = document.querySelector('.dropdown');
+        const dropdownContent = document.querySelector('.dropdown-content');
+
+        let timer;
+
+        dropdown.addEventListener('mouseenter', () => {
+            clearTimeout(timer);
+            dropdownContent.style.display = 'block';
+        });
+
+        dropdown.addEventListener('mouseleave', () => {
+            timer = setTimeout(() => {
+                dropdownContent.style.display = 'none';
+            }, 500); // Задержка перед скрытием в миллисекундах
+        });
+
+        dropdownContent.addEventListener('mouseenter', () => {
+            clearTimeout(timer);
+        });
+
+        dropdownContent.addEventListener('mouseleave', () => {
+            timer = setTimeout(() => {
+                dropdownContent.style.display = 'none';
+            }, 500);
+        });
+</script>
+</body>
+</html>

@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Уход - Студия TRIADA</title>
+    <style>
+
+        
+.spot {
+    position: absolute;
+    z-index: -10; 
+}
+
+#spot1 {
+    top: -85%; 
+    left: -88%;
+transform: scale(0.3);
+
+}
+
+#spot2 {
+    top: -100%; 
+    left: -76%;
+transform: scale(0.35);
+}
+
+#spot3 {
+    top: -91%; 
+    left: -76%;
+transform: scale(0.3);
+}
+
+
+
+.large-text {
+    font-family: 'Virginia';
+    font-size: 5vw;
+    color: #00cccc; 
+position: absolute;
+   
+    top: 85%; 
+    right: 20vw; 
+    transform: rotate(90deg); 
+  
+    z-index: 5; 
+    transform: translateY(-50%) rotate(270deg); 
+
+
+}
+
+.additional-text {
+    margin-top: 5px; 
+    font-size: 0.9em;
+}
+
+
+.text-container {
+    display: flex;
+    align-items: flex-start; 
+    justify-content: center;
+    gap: 200px; 
+}
+
+.text-block {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; 
+}
+
+
+.text-container p {
+    margin: 0; 
+}
+
+
+@font-face {
+            font-family: 'ExyleC';
+            src: url('exylec.otf') format('truetype');
+        }
+
+        @font-face {
+            font-family: 'Copperplate';
+            src: url('copperplate.otf') format('truetype');
+        }
+
+@font-face {
+            font-family: 'Virginia';
+            src: url('Virginia.ttf') format('truetype');
+        }
+
+
+
+
+.contacts {
+            display: flex;
+            align-items: center;
+            position: relative;
+            left: -30px; 
+       transform: translateX(-25vw);
+        }
+        .dropdown {
+            position: relative;
+            display: inline-block;
+            margin-left: 1500px;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #000; 
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            margin-top: 10px;
+        }
+        .dropdown-content a {
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+        .contacts .adress a,
+        .contacts .zap a {
+            color: #000000;
+            text-decoration: none;
+            margin-left: 20px;
+        }
+
+
+
+
+        body {
+                font-family: 'Copperplate';
+            background: black;
+            color: #fff;
+            margin: 0;
+            padding: 0px;
+        
+            overflow-x: hidden;
+        
+   margin: 0;
+    padding: 0;
+    background-image: url('sss.png');
+            background-size: 99vw 170vh; 
+
+    background-position: center; 
+    background-repeat: no-repeat; /* Чтобы фон не повторялся */
+        }
+        .header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 50px;
+    background-color: #808080;
+    display: flex;
+    align-items: center;
+    padding-left: 0px;
+    padding-right: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+    color: #000;
+    border-top: none; 
+    border-left: none; 
+font-family: 'ExyleC';
+font-size: 25px;
+}
+        .header img {
+            height: 40px;
+            margin-left: 10px;
+        }
+        .header .contact1 {
+            margin-left: auto;
+        }
+        .header .contact1 a {
+            color: #000000;
+            text-decoration: none;
+            margin-bottom: 3px;
+        }
+        .header .contact1 a.tel {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .header .contact1 a:not(.tel) {
+            display: inline-block;
+            margin-right: 10px;
+        }
+        .header .adress a,
+        .header .zap a {
+            color: #000000;
+            text-decoration: none;
+            margin-left: 10px;
+        }
+        .header .adress {
+            margin-left: 5px;
+   
+        }
+        .header .zap {
+            margin-left: 5px;
+            transform: translateX(-5px);
+        }
+        .small-logo {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            width: 50px;
+            height: auto;
+        }
+        .content {
+            text-align: center;
+            margin-top: 80px; 
+        }
+        .content h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        .content p {
+            font-size: 18px;
+            line-height: 1.6;
+            text-align: left;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .menu {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            gap: 40px;
+        }
+        .menu a {
+            text-decoration: none;
+            color: #00cccc;
+            font-size: 24px;
+            margin: 10px 0;
+            display: inline-block;
+            padding: 10px 20px;
+            background: #111;
+            border-radius: 10px;
+            position: relative;
+            transition: color 0.3s;
+            width: auto; 
+        }
+        .menu a:before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            width: calc(100% + 4px);
+            height: calc(100% + 4px);
+            background: linear-gradient(45deg, #00ffff, #00ffd5, #00bfff, #007fff, #00bfff, #00ffd5, #00ffff);
+            filter: blur(5px);
+            z-index: -1;
+            border-radius: 10px;
+            animation: glowing 20s linear infinite;
+            opacity: 0;
+            transition: opacity .3s ease-in-out;
+        }
+        .menu a:hover:before {
+            opacity: 1;
+        }
+        .menu a:active {
+            color: #000;
+        }
+        .menu a:active:after {
+            background: transparent;
+        }
+        .menu a:after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: #111;
+            top: 0;
+            left: 0;
+            border-radius: 10px;
+            z-index: -1;
+        }
+        @keyframes glowing {
+            0% { background-position: 0 0; }
+            50% { background-position: 400% 0; }
+            100% { background-position: 0 0; }
+        }
+        @media (max-width: 768px) {
+            .menu {
+                flex-direction: column;
+                align-items: center;
+            }
+            .menu a {
+                margin: 10px 0;
+                font-size: 20px;
+            }
+            .header {
+                height: 50px;
+                padding-left: 10px;
+            }
+            .header img {
+                height: 30px;
+            }
+        }
+        @media (max-width: 480px) {
+            .menu a {
+                font-size: 18px;
+            }
+            .header {
+                height: 40px;
+                padding-left: 10px;
+            }
+            .header img {
+                height: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+ 
+ <div class="header" id="header">
+        <img src="logo.png" alt="TRIADA Logo" class="logo-img">
+        <div class="contacts">
+            <div class="dropdown">
+                <span>Контакты</span>
+                <div class="dropdown-content">
+                    <a href="tel:+79029248099" class="tel">8(902) 924-80-99</a>
+                    <a href="https://www.instagram.com/triada_tattoo?igsh=bjU2Ym5obTR3MWFj" target="_blank">Inst</a>
+                    <a href="https://t.me/Triada_tattoo_studio" target="_blank">Tg</a>
+                    <a href="https://vk.com/triada__tattoo" target="_blank">VK</a>
+                </div>
+            </div>
+            <div class="adress">
+                <a href="https://yandex.ru/maps/62/krasnoyarsk/house/novomlinskaya_ulitsa_15/bUsYcQBkSEQEQFtsfXxwdHRqbA==" target="_blank">Адрес</a>
+            </div>
+            <div class="zap">
+                <a href="https://wa.me/+79029248099?text=Здравствуйте!%20Я%20хочу%20записаться%20на%20прием%20в%20студии%20TRIADA!">Записаться</a>
+            </div>
+        </div>
+    </div>
+
+<div class="content" style="margin-left: -200px;">
+    <h2 style="font-size: 60px; color: gray;">Уход за тату</h2>
+    <div class="text-container">
+        <div class="text-block">
+            <p style="font-size: 26px; color: #00cccc; margin-left: 90px;">Самостоятельный уход</p>
+            <p class="additional-text" style="margin-left: 20px; padding-top: 10px;font-size: 23px;color: gray; ">1.По приходу до мой промойте тату</p>
+ <p class="additional-text " style="font-size: 23px; color: gray;margin-left: -30px;">мыльной водой и протрите безворсовой</p>
+<p class="additional-text" style="margin-left: 150px;  font-size: 23px; color: gray;"> салфеткой</p>
+ <p class="additional-text"style=" margin-left: 50px; padding-top: 10px; font-size: 23px; color: gray;">2.Намажьте тату мазью в составе</p> <p class="additional-text"style=" margin-left: 90px; font-size: 25px;color: gray; ">которой есть пантенол</p>
+<p class="additional-text" style=" padding-top: 10px; font-size: 23px; margin-left: 70px; color: gray;">3. Закройте тату одноразовой</p>
+ <p class="additional-text" style="margin-left: 150px; font-size: 23px;  color: gray;">пeленкой</p> 
+<p class="additional-text" style="margin-left: 30px; padding-top: 10px;  font-size: 23px; color: gray;">4.Повторяйте процедуру 3-4 раза в</p> 
+<p class="additional-text" style="font-size: 23px; color: gray;" > день в течение двух дней, используя </p>
+ <p class="additional-text" style="margin-left: 27px; font-size: 23px; color: gray;"> пеленку. И ещё неделю, используя</p>
+<p class="additional-text" style="margin-left: 145px; font-size: 23px; color: gray;"> только мазь</p>
+
+        </div>
+        <div class="text-block" style="margin-left: -250px;">
+            <p style="font-size: 26px; color: #00cccc; margin-left: 151px;">С помощью заживляющей пленки</p>
+            <p class="additional-text" style="margin-left: 140px; padding-top: 10px; font-size: 23px; color: gray;">1.С пленкой необходимо ходить 5-6</p>
+<p class="additional-text" style="margin-left: 150px; font-size: 23px; color: gray;"> дней. В это время под ней может</p> 
+<p class="additional-text" style="margin-left: 200px; font-size: 23px; color: gray;">скапливаться сукровица.</p>
+ <p class="additional-text" style=" padding-top: 10px; font-size: 23px; margin-left: 215px; color: gray;">!ЭТО НОРМАЛЬНО!</p> 
+<p class="additional-text" style="margin-left: 130px; padding-top: 10px; font-size: 23px; color: gray;">2.Снимите пленку, размочив под ней</p>
+<p class="additional-text" style="margin-left: 150px; font-size: 23px; color: gray;">клей теплой водой. Промойте тату</p>
+ <p class="additional-text" style="margin-left: 170px; font-size: 23px;color: gray; ">мыльной водой и протрите</p>
+<p class="additional-text" style="margin-left: 200px; font-size: 23px; color: gray;"> безворсовой салфеткой.</p>
+
+ <p class="additional-text" style="margin-left: 140px; padding-top: 10px; font-size: 23px; color: gray;">3.3-4 раза в день в течение недели 
+<p class="additional-text" style="margin-left: 150px; font-size: 23px;color: gray; " >   увлажняйте тату мазью, в составе</p>
+<p class="additional-text" style="margin-left: 200px; font-size: 23px; color: gray;"> которой есть пантенол.</p>
+        </div>
+    </div>
+
+<img src="sh2.jpg" style="width: 330px; z-index: -10; padding-left: 80%;  height: auto; margin-top: -430px;">
+
+<div class="large-text">Care</div>
+
+<div class="spot" id="spot1">
+    <img src="spot111.png" alt="Пятно 1">
+</div>
+
+<div class="spot" id="spot2">
+    <img src="spot222.png" alt="Пятно 2">
+</div>
+
+<div class="spot" id="spot3">
+    <img src="spot333.png" alt="Пятно 3">
+</div>
+</div>
+
+
+
+
+ <script>
+        // Показать и скрыть выпадающее меню с задержкой
+        const dropdown = document.querySelector('.dropdown');
+        const dropdownContent = document.querySelector('.dropdown-content');
+
+        let timer;
+
+        dropdown.addEventListener('mouseenter', () => {
+            clearTimeout(timer);
+            dropdownContent.style.display = 'block';
+        });
+
+        dropdown.addEventListener('mouseleave', () => {
+            timer = setTimeout(() => {
+                dropdownContent.style.display = 'none';
+            }, 500); // Задержка перед скрытием в миллисекундах
+        });
+
+        dropdownContent.addEventListener('mouseenter', () => {
+            clearTimeout(timer);
+        });
+
+        dropdownContent.addEventListener('mouseleave', () => {
+            timer = setTimeout(() => {
+                dropdownContent.style.display = 'none';
+            }, 500);
+        });
+    </script>
+
+
+</body>
+</html>

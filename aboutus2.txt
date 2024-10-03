@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <style>
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #0F171A;
+    color: #FFFFFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    display: flex;
+    max-width: 1200px;
+    width: 90%;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.left-section {
+    flex: 1;
+    text-align: center;
+    padding: 20px;
+}
+
+.left-section h2 {
+    writing-mode: vertical-rl;
+    text-transform: uppercase;
+    color: #00FFCC;
+    margin: 0;
+}
+
+.right-section {
+    flex: 2;
+    padding: 20px;
+}
+
+.image-container {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.image-container img {
+    width: 100%;
+    border: 5px solid #00FFCC;
+}
+
+.play-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 48px;
+    color: rgba(255, 255, 255, 0.8);
+    pointer-events: none;
+}
+
+.text-content p {
+    margin: 0 0 20px 0;
+    line-height: 1.5;
+}
+
+.text-content ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.text-content ul li {
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 20px;
+}
+
+.text-content ul li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #00FFCC;
+}
+</style>
+</head>
+<body>
+    <div class="container">
+        <div class="left-section">
+            <h2>About us</h2>
+        </div>
+        <div class="right-section">
+            <div class="image-container">
+                <img src="studio.jpg">
+      
+            </div>
+            <div class="text-content">
+                <p>КАЖДЫЙ ДЕНЬ МЫ ПО КИРПИЧИКАМ СТРОИМ НАШУ КРЕПОСТЬ И БОЛЕЕ ТОГО, СОВМЕСТНО ДОСТИГАЕМ НЕБЫВАЛЫХ ВЫСОТ. КАЖДЫЙ ЗДЕСЬ УНИКАЛЕН И НЕЗАМЕНИМ В СВОЕМ ДЕЛЕ.</p>
+                <p>Из обычной тату-студии превратились в творческое пространство, площадью 450 кв. метров, в котором каждому есть место для самовыражения!</p>
+                <p>Сейчас мы одна из самых лучших студий в городе, а констатацией этому является Вы - наши клиенты. Все, кто выбирают нас, вносят огромный вклад в наше развитие. А мы делаем все, чтобы Ваше время, проведенное в нашем пространстве, было особенным.</p>
+                <p><strong>Почему мы?</strong></p>
+                <ul>
+                    <li>Нам доверяют уже 5 лет</li>
+                    <li>Мастера с опытом более 15 лет</li>
+                    <li>Более 10 000 довольных клиентов</li>
+                    <li>Самая большая студия в России - 450 кв. метров</li>
+                    <li>Такси за наш счет</li>
+                    <li>Ресторан доставки еды прямо в студии</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

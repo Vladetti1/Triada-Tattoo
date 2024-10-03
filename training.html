@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Обучение - Студия TRIADA</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #000000, #001a1a); /* Градиентный фон */
+            color: #fff;
+            margin: 0;
+            padding: 20px;
+            overflow-x: hidden;
+        }
+        .header {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 60px;
+            background-color: #1a1a1a;
+            display: flex;
+            align-items: center;
+            padding-left: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 10;
+            opacity: 1; /* Показать хедер */
+        }
+        .header img {
+            height: 40px;
+        }
+        .small-logo {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            width: 50px;
+            height: auto;
+        }
+        .content {
+            text-align: center;
+            margin-top: 80px; /* Увеличьте отступ, чтобы учесть высоту хедера */
+        }
+        .content h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        .content p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+        .menu {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            gap: 40px;
+        }
+        .menu a {
+            text-decoration: none;
+            color: #00cccc;
+            font-size: 24px;
+            margin: 10px 0;
+            display: inline-block;
+            padding: 10px 20px;
+            background: #111;
+            border-radius: 10px;
+            position: relative;
+            transition: color 0.3s;
+            width: auto; /* Установить ширину в авто */
+        }
+        .menu a:before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            width: calc(100% + 4px);
+            height: calc(100% + 4px);
+            background: linear-gradient(45deg, #00ffff, #00ffd5, #00bfff, #007fff, #00bfff, #00ffd5, #00ffff);
+            filter: blur(5px);
+            z-index: -1;
+            border-radius: 10px;
+            animation: glowing 20s linear infinite;
+            opacity: 0;
+            transition: opacity .3s ease-in-out;
+        }
+        .menu a:hover:before {
+            opacity: 1;
+        }
+        .menu a:active {
+            color: #000;
+        }
+        .menu a:active:after {
+            background: transparent;
+        }
+        .menu a:after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: #111;
+            top: 0;
+            left: 0;
+            border-radius: 10px;
+            z-index: -1;
+        }
+        @keyframes glowing {
+            0% { background-position: 0 0; }
+            50% { background-position: 400% 0; }
+            100% { background-position: 0 0; }
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            color: #fff;
+            background: #111;
+            border-radius: 10px;
+            text-decoration: none;
+            font-size: 18px;
+            cursor: pointer;
+            position: relative;
+            z-index: 0;
+            transition: color 0.3s;
+            width: auto;
+            text-align: center;
+            box-sizing: border-box;
+        }
+        .button:before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            width: calc(100% + 4px);
+            height: calc(100% + 4px);
+            background: linear-gradient(45deg, #00ffff, #00ffd5, #00bfff, #007fff, #00bfff, #00ffd5, #00ffff);
+            filter: blur(5px);
+            z-index: -1;
+            border-radius: 10px;
+            animation: glowing 20s linear infinite;
+            opacity: 0;
+            transition: opacity .3s ease-in-out;
+        }
+        .button:hover:before {
+            opacity: 1;
+        }
+        .button:active {
+            color: #000;
+        }
+        .button:active:after {
+            background: transparent;
+        }
+        .button:after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: #111;
+            top: 0;
+            left: 0;
+            border-radius: 10px;
+            z-index: -1;
+        }
+        @media (max-width: 768px) {
+            .menu {
+                flex-direction: column;
+                align-items: center;
+            }
+            .menu a {
+                margin: 10px 0;
+                font-size: 20px;
+            }
+            .header {
+                height: 50px;
+                padding-left: 10px;
+            }
+            .header img {
+                height: 30px;
+            }
+        }
+        @media (max-width: 480px) {
+            .menu a {
+                font-size: 18px;
+            }
+            .header {
+                height: 40px;
+                padding-left: 10px;
+            }
+            .header img {
+                height: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="header">
+    <img src="logo.png" alt="TRIADA Logo">
+</div>
+
+<img src="logo.png" alt="TRIADA Logo" class="small-logo">
+
+<div class="content">
+    <h2>Обучение</h2>
+    <p>Уже более ... студентов выпустились с нашей тату школы и стали настоящими тату мастерами.</p>
+    <p>Старший мастер Владислав поделится своим опытом в тату индустрии. Обучение длится 4 дня и включает все необходимые навыки для начала карьеры в татуировке.</p>
+    <a href="https://wa.me/+79029248099?text=Здравствуйте!%20Я%20хочу%20узнать%20об%20обучении!" class="button">Узнать об обучении</a>
+</div>
+
+<div class="menu">
+    <a href="index.html" class="button">На главную</a>
+</div>
+
+</body>
+</html>
